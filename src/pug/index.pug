@@ -1,0 +1,86 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title My Website Title
+    link(rel="stylesheet", href="css/main.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+  body
+    block content 
+        #navbar
+            div
+                h1(id="header") Jacob Grasser
+
+            #nav-links
+                a(id="home-link") Home 
+                a(id="about-link") About 
+                a(id="animations-link") Animations 
+                a(id="ill-link") Illustrations 
+                a(id="sketchbook-link") Sketchbook 
+                a(id="contact-link") Contact
+        
+        #drawing 
+            img(src="assets/guy.png" id="guy")
+            img(src="assets/goorah.png" id="goorah")
+
+
+
+    script.
+         document.addEventListener('DOMContentLoaded', function() {
+            const illustrationLink = document.getElementById('ill-link');
+            const homeLink = document.getElementById('home-link');
+            const aboutLink = document.getElementById('about-link');
+            const animationsLink = document.getElementById('animations-link');
+            const sketchBookLink = document.getElementById('sketchbook-link');
+            const contactLink = document.getElementById('contact-link');
+            const header = document.getElementById('header');
+
+            function animateHeader(newText) {
+                // Remove the animation
+                header.style.animation = 'none';
+
+                // Force a reflow, resetting the animation
+                void header.offsetWidth;
+
+                // Apply the new text and reapply the animation
+                header.textContent = newText;
+                header.style.animation = 'slideOutAndIn 1s';
+            }
+
+            illustrationLink.addEventListener('click', function() {
+                animateHeader('Illustrations'); 
+            });
+
+            homeLink.addEventListener('click', function() {
+                animateHeader('Jacob Grasser'); 
+            });
+
+            aboutLink.addEventListener('click', function() {
+                animateHeader('About'); 
+            });
+
+            contactLink.addEventListener('click', function() {
+                animateHeader('Contact'); 
+            });
+
+            sketchBookLink.addEventListener('click', function() {
+                animateHeader('Sketchbook'); 
+            });
+
+            animationsLink.addEventListener('click', function() {
+                animateHeader('Animations'); 
+            });
+
+
+         });
+
+

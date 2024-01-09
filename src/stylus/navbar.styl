@@ -1,0 +1,39 @@
+#navbar
+    text-align: center
+    color: rgb(235, 235, 235)
+
+    h1
+        font-family: 'Amatic SC', sans-serif;
+        font-size: 75px
+        padding: 0
+        animation: none
+        white-space: nowrap
+
+    @keyframes slideOutAndIn {
+        0%, 100% {
+            transform: translateX(0%);
+        }
+        25%, 50% {
+            transform: translateX(100%);
+        }
+        75% {
+            transform: translateX(-100%);
+        }
+    }
+        
+    a
+        margin: 0px 15px 0px 15px
+        font-size: 30px 
+        font-family: 'Amatic SC', sans-serif
+
+        &:hover
+            font-size: 32px
+            transition: 0.2s
+            color: rgb(35, 35, 35)
+            cursor: pointer
+
+    #nav-links
+        margin-top: -37px
+
+    
+    

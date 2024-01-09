@@ -1,0 +1,26 @@
+{
+    "name": "csswebart",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "pug": "pug src/pug -o dist -P",
+        "stylus": "stylus src/stylus -o dist/css -w",
+        "serve": "http-server dist -c-1",
+        "watch:pug": "nodemon -e pug -x \"npm run pug\"",
+        "watch:stylus": "nodemon -e styl -x \"npm run stylus\"",
+        "start": "concurrently \"npm run serve\" \"npm run watch:pug\" \"npm run watch:stylus\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^3.0.2",
+        "pug": "^3.0.2",
+        "pug-cli": "^1.0.0-alpha6",
+        "stylus": "^0.62.0"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
